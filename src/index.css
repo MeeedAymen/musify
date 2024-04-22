@@ -1,13 +1,653 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    }
+    
+    :root {
+      --black: #212429;
+      --dark: #371F11;
+      --main: #A0643D;
+      --white: #FAFAFA;
+      --light-grey: #ECF0F1;
+      --grey: #BDC3C7;
+      --side: #99BED0;
+    }
+
+.back {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background-color: var(--main);
+  border-radius: 200px;
+  width: 50px;
+  height: 50px;
+  color: var(--white);
+  padding: 10px 14px;
+  letter-spacing: 2px;
+  font-size: 24px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.remember {
+  display: flex;
+  gap: 3px;
 }
+
+.group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0px;
+}
+
+.log-title {
+  text-align: center;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: var(--dark);
+  gap: 1px;
+}
+
+
+.input-group {
+  margin: 25px 0px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.input-group label {
+  display: block;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+
+.input-group input:not([type="checkbox"]) {
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid var(--grey);
+  outline: 0;
+  background-color: var(--white);
+  padding: 0.75rem 1rem;
+  color: var(--black);
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: var(--main);
+}
+
+.input-group select {
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid var(--grey);
+  outline: 0;
+  background-color: var(--white);
+  padding: 10px;
+  color: var(--black);
+}
+
+.forgot a,
+.signup a {
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgot a:hover,
+.signup a:hover {
+  text-decoration: underline var(--main);
+}
+
+.sign {
+  display: block;
+  width: 100%;
+  background-color: var(--main);
+  padding: 0.75rem;
+  text-align: center;
+  color: var(--white);
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+.social-message {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.line {
+  height: 1px;
+  flex: 1 1 0%;
+  background-color: var(--dark);
+}
+
+.social-message .message {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--dark);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons .icon {
+  border-radius: 0.125rem;
+  padding: 0.75rem;
+  border: none;
+  background-color: transparent;
+  margin-left: 8px;
+}
+
+.social-icons .icon svg {
+  height: 1.25rem;
+  width: 1.25rem;
+  fill: var(--dark);
+}
+
+.signup {
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--dark);
+}
+
+.hero{
+  position: relative;
+  width: 100%;
+  height: 70vh;
+}
+.overlay{
+  /* background-color: rgba(0, 0, 0, 0.246); */
+  background: linear-gradient(rgba(0, 0, 0, 0.246), rgba(0, 0, 0, 0.246)), url(https://static.vecteezy.com/system/resources/previews/011/448/062/original/music-festival-banner-classic-music-background-with-notes-music-plates-and-lettering-for-flyer-poster-concert-party-design-illustration-vector.jpg);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+}
+.hero header{
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+.hero header h2{
+  color: var(--white);
+  display: flex;
+  align-items: center;
+}
+nav, nav div{
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+nav a{
+  color: var(--white);
+  font-size: 17px;
+  text-decoration: none;
+}
+.active{
+  font-weight: 600;
+}
+.text{
+  margin-top: 80px;
+    position: relative;
+    text-align: center;
+      z-index: 1;
+      color: var(--white);
+}
+.text h2{
+  font-size: 34px;
+}
+.text p{
+  font-size: 18px;
+}
+.actions{
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+.search{
+  margin-top: 2rem;
+  height: 50px;
+  width: 30%;
+  /* border: 1px solid ; */
+  border-radius: 70px;
+  overflow: hidden;
+}
+.search input{
+    color: #212429;
+  height: 100%;
+  padding: 0px 20px ;
+  outline: none;
+  width: 90%;
+    font-size: 16px;
+  border: none;
+  background-color: var(--white);
+}
+.search button{
+  width: 10%;
+  height: 100%;
+  outline: none;
+  font-size: 16px;
+  border: none;
+  color: var(--main);
+  background-color: var(--white);
+
+}
+.filter{
+  height: 40px;
+  width: 15%;
+  /* border-radius: 10px; */
+  border-bottom: 2px solid var(--main);
+  overflow: hidden;
+}
+.filter select{
+  width: 100%;
+  outline: none;
+  padding: 0px 10px;
+  background-color: var(--white);
+  border: none;
+  height: 100%;
+  
+}
+.container{
+  background-color: var(--white);
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.top{
+  display: flex;
+  align-items: center;
+  width: 60%;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+.body{
+  display: flex;
+  align-items: center;
+  width: 60%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px 0px;
+}
+.top h2{
+  color: var(--main);
+}
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin-bottom: 2rem;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  background-size: cover;
+  background-position: center;
+  padding: 1.5rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  font-size: 25px;
+  line-height: 2rem;
+  font-weight: 700;
+  color: var(--main);
+}
+
+.price {
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--dark)
+}
+
+
+
+.back {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background-color: var(--main);
+    border-radius: 200px;
+    width: 50px;
+    height: 50px;
+    color: var(--white);
+    padding: 10px 14px;
+    letter-spacing: 2px;
+    font-size: 24px;
+  }
+  
+  .remember {
+    display: flex;
+    gap: 3px;
+  }
+  
+  .group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0px;
+  }
+  
+  .log-title {
+    text-align: center;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: var(--dark);
+    gap: 1px;
+  }
+  
+  
+  .input-group {
+    margin: 25px 0px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  
+  .input-group label {
+    display: block;
+    color: var(--black);
+    margin-bottom: 4px;
+  }
+  
+  .input-group input:not([type="checkbox"]) {
+    width: 100%;
+    border-radius: 0.375rem;
+    border: 1px solid var(--grey);
+    outline: 0;
+    background-color: var(--white);
+    padding: 0.75rem 1rem;
+    color: var(--black);
+  }
+  
+  .input-group input:focus,
+  .input-group select:focus {
+    border-color: var(--main);
+  }
+  
+  .input-group select {
+    width: 100%;
+    border-radius: 0.375rem;
+    border: 1px solid var(--grey);
+    outline: 0;
+    background-color: var(--white);
+    padding: 10px;
+    color: var(--black);
+  }
+  
+  .forgot a,
+  .signup a {
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .forgot a:hover,
+  .signup a:hover {
+    text-decoration: underline var(--main);
+  }
+  
+  .sign {
+    display: block;
+    width: 100%;
+    background-color: var(--main);
+    padding: 0.75rem;
+    text-align: center;
+    color: var(--white);
+    border: none;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    margin-top: 20px;
+    letter-spacing: 1px;
+  }
+  
+  .social-message {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .line {
+    height: 1px;
+    flex: 1 1 0%;
+    background-color: var(--dark);
+  }
+  
+  .social-message .message {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: var(--dark);
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-icons .icon {
+    border-radius: 0.125rem;
+    padding: 0.75rem;
+    border: none;
+    background-color: transparent;
+    margin-left: 8px;
+  }
+  
+  .social-icons .icon svg {
+    height: 1.25rem;
+    width: 1.25rem;
+    fill: var(--dark);
+  }
+  
+  .signup {
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: var(--dark);
+  }
+  
+  .hero{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+  }
+  .overlay{
+    /* background-color: rgba(0, 0, 0, 0.246); */
+    background: linear-gradient(rgba(0, 0, 0, 0.246), rgba(0, 0, 0, 0.246)), url(https://static.vecteezy.com/system/resources/previews/011/448/062/original/music-festival-banner-classic-music-background-with-notes-music-plates-and-lettering-for-flyer-poster-concert-party-design-illustration-vector.jpg);
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+  }
+  .hero header{
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+  }
+  .hero header h2{
+    color: var(--white);
+    display: flex;
+    align-items: center;
+  }
+  nav, nav div{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+  nav a{
+    color: var(--white);
+    font-size: 17px;
+    text-decoration: none;
+  }
+  .active{
+    font-weight: 600;
+  }
+  .text{
+    margin-top: 80px;
+      position: relative;
+      text-align: center;
+        z-index: 1;
+        color: var(--white);
+  }
+  .text h2{
+    font-size: 34px;
+  }
+  .text p{
+    font-size: 18px;
+  }
+  .actions{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  .search{
+    margin-top: 2rem;
+    height: 50px;
+    width: 30%;
+    /* border: 1px solid ; */
+    border-radius: 70px;
+    overflow: hidden;
+  }
+  .search input{
+    height: 100%;
+    padding: 0px 20px ;
+    outline: none;
+    width: 90%;
+      font-size: 16px;
+    border: none;
+    background-color: var(--white);
+  }
+  .search button{
+    width: 10%;
+    height: 100%;
+    outline: none;
+    font-size: 16px;
+    border: none;
+    color: var(--main);
+    background-color: var(--white);
+  
+  }
+  .filter{
+    height: 40px;
+    width: 15%;
+    /* border-radius: 10px; */
+    border-bottom: 2px solid var(--main);
+    overflow: hidden;
+  }
+  .filter select{
+    width: 100%;
+    outline: none;
+    padding: 0px 10px;
+    background-color: var(--white);
+    border: none;
+    height: 100%;
+    
+  }
+  .container{
+    background-color: var(--white);
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .top{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    justify-content: space-between;
+    padding: 20px 0px;
+  }
+  .body{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 0px;
+  }
+  .top h2{
+    color: var(--main);
+  }
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin-bottom: 2rem;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center;
+    padding: 1.5rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+  
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .title {
+    font-size: 25px;
+    line-height: 2rem;
+    font-weight: 700;
+    color: var(--main);
+  }
+  
+  .price {
+    font-size: 40px;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--dark)
+  }
+  
+  
